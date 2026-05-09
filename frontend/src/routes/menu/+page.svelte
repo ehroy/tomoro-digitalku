@@ -783,7 +783,7 @@
 
 	.cart-float {
 		position: fixed;
-		bottom: 80px;
+		bottom: calc(80px + env(safe-area-inset-bottom));
 		right: 20px;
 		background: var(--orange);
 		color: white;
@@ -795,7 +795,7 @@
 		align-items: center;
 		gap: 6px;
 		box-shadow: 0 4px 14px rgba(244, 123, 32, 0.4);
-		z-index: 99;
+		z-index: 101;
 		border: none;
 		cursor: pointer;
 		font-family: var(--font);
@@ -828,11 +828,11 @@
 		right: 0;
 		width: 100%;
 		max-width: 450px;
-		height: calc(100vh - 68px);
-		bottom: 68px;
+		height: calc(100dvh - 68px - env(safe-area-inset-bottom));
+		bottom: calc(68px + env(safe-area-inset-bottom));
 		background: white;
 		box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
-		z-index: 99;
+		z-index: 101;
 		display: flex;
 		flex-direction: column;
 		animation: slideIn 0.3s ease;

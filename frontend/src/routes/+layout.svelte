@@ -173,7 +173,7 @@
 		flex: 1;
 		overflow-y: auto;
 		overflow-x: hidden;
-		padding-bottom: 68px;
+		padding-bottom: calc(68px + env(safe-area-inset-bottom));
 		scrollbar-width: none;
 	}
 	
@@ -186,7 +186,8 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		height: 68px;
+		height: calc(68px + env(safe-area-inset-bottom));
+		padding-bottom: env(safe-area-inset-bottom);
 		background: var(--white);
 		border-top: 1px solid #eee;
 		display: flex;
@@ -201,7 +202,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 3px;
-		padding: 8px 4px;
+		padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
 		cursor: pointer;
 		transition: all 0.2s;
 		text-decoration: none;
@@ -252,6 +253,10 @@
 			max-width: 480px;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+
+		.main-content {
+			padding-bottom: calc(68px + env(safe-area-inset-bottom) + 8px);
 		}
 	}
 
